@@ -1,0 +1,18 @@
+#sidebar {
+    padding-top: 10px;
+    position: fixed;
+    height: 100%;
+   }
+#maincontent {
+     position: relative;
+     float: left;
+     margin-left: 16.5%;
+     padding: 10px;
+   }
+.accordion-menu{
+    margin-top: 20px;
+}
+  
+.mr{
+    margin-right: 0px;
+}
