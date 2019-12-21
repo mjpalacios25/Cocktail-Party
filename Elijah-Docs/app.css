@@ -1,0 +1,117 @@
+/*font-family: 'Caveat', cursive;
+font-family: 'Special Elite', cursive;*/
+.top-bar {
+    margin-bottom:100px;
+    background-color:black;
+}
+
+ul.dropdown.menu {
+    background-color:black;
+}
+
+.top-bar-right {
+    background-color:black;
+}
+
+ul {
+    background-color:black;
+}
+
+.menu-text {
+    background-color:black;
+}
+
+button.button.hollow {
+    color:black;
+    border:none;
+}
+
+button.secondary.button.hollow {
+    color:black;
+    border:black;
+}
+
+ul.menu {
+    color:black;
+}
+
+.strength {
+    font-family: 'Special Elite', cursive;
+    border:solid 2px black;
+    padding:5px;
+}
+
+li a{
+    font-family: 'Special Elite', cursive;
+    background-color:black;
+    color:white;
+}
+
+.fa-align-justify {
+    font-size:150%;
+    background-color:black;
+    color:white;
+}
+
+.fa-skull-crossbones {
+    font-size:200%;
+}
+
+body {
+    background-image:url(../Elijah-Docs/background.jpg);
+    
+}
+
+img {
+    max-width:400px;
+    max-height:400px;
+    margin-bottom:20px;
+    border: solid 2px black;
+}
+
+hr{
+    transform:rotate(2deg);
+    position:relative;
+    border:none;
+    height:1px;
+    background:black;
+  }
+
+.button {
+    font-family: 'Special Elite', cursive;
+    color:white;
+}
+
+.recipe-writing {
+    font-family: 'Caveat', cursive;
+    font-size:120%;
+}
+
+.history-background {
+    font-family: 'Special Elite', cursive;
+
+}
+
+h3 {
+    font-family: 'Special Elite', cursive;
+    font-weight:bold;
+}
+h2 {
+    font-family: 'Special Elite', cursive;
+}
+
+.bev-title {
+    font-family: 'Special Elite', cursive;
+    font-weight:bold;
+    color:white;
+}
+
+footer {
+    height:100px;
+    background-color:black;
+}
+
+blockquote {
+    color:white;
+    font-family: 'Special Elite', cursive;
+}
