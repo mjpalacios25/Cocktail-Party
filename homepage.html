@@ -6,29 +6,41 @@
     <title>Cocktail Party Home</title>
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kzi8iih.css">
+
+
 
     <style>
     
     body {
       font-family: Helvetica;
+      background: url('https://images-na.ssl-images-amazon.com/images/I/91TmPQI6%2BAL._AC_SL1500_.jpg') no-repeat center center fixed;
+      background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
+      -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+      margin: 0; /* to remove the default white margin of body */
+      padding: 0; /* to remove the default white margin of body */
+      overflow: hidden;
+      z-index: 20;
      }
      
      a {
-       color: black;
+       color: white;
+       font-weight: normal;
      }
     </style>
   </head>
   
   <body>
     <div class="medium-2 columns" id = "sidebar">
-      
-      <img src="assets\logo.jpeg" alt="company logo">
+      <div id = "sidebar-content">
+      <img src="assets/logo/logo.jpeg" alt="company logo">
       
       
       <ul class="vertical menu accordion-menu" style = "font-weight: bold; color: black;" data-accordion-menu>
         <li>
-          <a href="#">Seasonal</a>
+          <a href="#" class = "menu-title">Seasonal</a>
           <ul class="menu vertical nested is-active" style="color: black;">
             <li><a href="#">Fall</a></li>
             <li><a href="#">Winter</a></li>
@@ -37,7 +49,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">By the 5 Tastes</a>
+          <a href="#" class = "menu-title">By the 5 Tastes</a>
           <ul class="menu vertical nested is-active" style="color: black;">
             <li><a href="#">Sweet</a></li>
             <li><a href="#">Salty</a></li>
@@ -47,20 +59,21 @@
           </ul>
         </li>
         <li>
-          <a href="#">Hot Drinks</a>
+          <a href="#" class = "menu-title">Hot Drinks</a>
         </li>
         <li>
-          <a href="#">Frozen Drinks</a>
+          <a href="#" class = "menu-title">Frozen Drinks</a>
         </li>
         <li>
-          <a href="#">Luck of the Draw!</a>
+          <a href="#" class = "menu-title">Luck of the Draw!</a>
         </li>
-      </ul>     
+      </ul>
+      </div>     
     </div>
     
     <div class="medium-10 columns" id="maincontent">
       <div class = "text-center title-bar" style = "margin-bottom: -8px;">
-        <h1 style="font-family: Industrial;">Cocktail Party!</h1>
+        <h1 style="font-family: modesto-open-primary;">Cocktail Party!</h1>
       </div>
       
   
@@ -72,11 +85,11 @@
  <div class="input-group">
     <input class = "input-group-field" type="search" placeholder="Search">
     <div class = "input-group-button">
-      <input type = "submit" class="button mr" value = "Search">
+      <input type = "submit" class="button mr" value = "Search" id="submitbtn">
     </div>
 </div>
   
-  <div class="orbit" style = "margin-top: -10px" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <div class="orbit" style = "margin-top: -12px" role="region" aria-label="Favorite Space Pictures" data-orbit>
     <div class="orbit-wrapper">
       <div class="orbit-controls">
         <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
@@ -85,20 +98,21 @@
       <ul class="orbit-container">
         <li class="is-active orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" src="./assets/adam-jaime-dmkmrNptMpw-unsplash.jpg" alt="Space">
-            <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+            <img class="orbit-image" src="./assets/CRANBERRY-MARTINI.jpg" alt="Cranberry Martini">
+            <figcaption class="orbit-caption"><p>Cranberry Martinis are a great addition to any holiday party. They bring the cheer and sweetness of the holdiay, with the classic burn of gin!</p></figcaption>
           </figure>
         </li>
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" src="./assets/adam-jaime-dmkmrNptMpw-unsplash.jpg" alt="Space">
-            <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+            <img class="orbit-image" src="./assets/The-Cool-Yule-Mule.jpg" alt="A Yule Mule">
+            <figcaption class="orbit-caption"><p>This will give you a kick, but hopefully leave your memory of the holiday intact!</p></figcaption>
           </figure>
         </li>
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" src="./assets/kobby-mendez-xBFTjrMIC0c-unsplash.jpg" alt="Space">
-            <figcaption class="orbit-caption">Encapsulating</figcaption>
+            <img class="orbit-image" src="./assets/White-Christmas.jpg" alt="White Christmas">
+            <figcaption class="orbit-caption"><p>Nothing says Christmas more than a layer of freshly fallen snow, and this drink sure brings that spirit. Don't let it's cheery appearence deceive you though, it packs a punch.
+            </p></figcaption>
           </figure>
         </li>
         <li class="orbit-slide">
@@ -120,6 +134,7 @@
     
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="./assets/homepagescript.js"></script>
     <script>
       $(document).foundation();
     </script>
