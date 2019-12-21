@@ -1,0 +1,66 @@
+/*font-family: 'Caveat', cursive;
+font-family: 'Special Elite', cursive;*/
+.top-bar {
+    margin-bottom:100px;
+}
+
+.strength {
+    font-family: 'Special Elite', cursive;
+}
+
+li a{
+    font-family: 'Special Elite', cursive;
+    color:black;
+}
+
+.fa-cocktail {
+    font-size:150%;
+}
+
+.fa-skull-crossbones {
+    font-size:200%;
+}
+
+body {
+    background-image:url(../10911.jpg);
+    max-width:auto;
+    max-height:auto;
+    
+}
+
+img {
+    max-width:400px;
+    max-height:400px;
+    margin-bottom:20px;
+    border: solid 5px black;
+}
+
+hr{
+    transform:rotate(2deg);
+    position:relative;
+    border:none;
+    height:1px;
+    background:black;
+  }
+
+.button {
+    font-family: 'Special Elite', cursive;
+    color:white;
+}
+
+.recipe-writing {
+    font-family: 'Caveat', cursive;
+    font-size:120%;
+}
+
+.history-background {
+    font-family: 'Special Elite', cursive;
+
+}
+
+h2 {
+    font-family: 'Special Elite', cursive;
+}
+h3 {
+    font-family: 'Special Elite', cursive;
+}
