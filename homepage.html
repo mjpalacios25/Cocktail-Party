@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="https://use.typekit.net/kzi8iih.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Special+Elite&display=swap" rel="stylesheet">
 
 
     <style>
     
     body {
-      font-family: Helvetica;
-      background: url('https://images-na.ssl-images-amazon.com/images/I/91TmPQI6%2BAL._AC_SL1500_.jpg') no-repeat center center fixed;
+      font-family: 'Special Elite', cursive;
+      background: url("./parchmentbg.jpg");
       background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
       -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
       margin: 0; /* to remove the default white margin of body */
@@ -83,7 +83,7 @@
  <br>
 
  <div class="input-group">
-    <input class = "input-group-field" type="search" placeholder="Search">
+    <input class = "input-group-field" type="search" placeholder="Search" id="searchValue">
     <div class = "input-group-button">
       <input type = "submit" class="button mr" value = "Search" id="submitbtn">
     </div>
@@ -132,9 +132,12 @@
 
 
     
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
     <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script src="./assets/homepagescript.js"></script>
+    <script src="./assets/homepagescript.js" type="text/javascript"></script>
     <script>
       $(document).foundation();
     </script>
