@@ -1,0 +1,140 @@
+/*font-family: 'Caveat', cursive;
+font-family: 'Special Elite', cursive;*/
+
+#logo-contain {
+    position: relative;
+    width: auto;
+    height: auto;
+    z-index: 10;
+}
+
+#logopic {
+    max-width:auto;
+    max-height:auto;
+    border: solid 2px black;
+}
+
+#logo-title {
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    color: gold;
+    background-color: rgba(0,0,0,.5);
+}
+
+
+.top-bar {
+    margin-bottom:100px;
+    background-color:black;
+}
+
+ul.dropdown.menu {
+    background-color:black;
+}
+
+.top-bar-right {
+    background-color:black;
+}
+
+ul {
+    background-color:black;
+}
+
+.menu-text {
+    background-color:black;
+}
+
+button.button.hollow {
+    color:black;
+    border:none;
+}
+
+button.secondary.button.hollow {
+    color:black;
+    border:black;
+}
+
+ul.menu {
+    color:black;
+}
+
+.strength {
+    font-family: 'Special Elite', cursive;
+    border:solid 2px black;
+    padding:5px;
+}
+
+li a{
+    font-family: 'Special Elite', cursive;
+    background-color:black;
+    color:white;
+}
+
+.fa-align-justify {
+    font-size:150%;
+    background-color:black;
+    color:white;
+}
+
+.fa-skull-crossbones {
+    font-size:200%;
+}
+
+body {
+    background-image:url(Elijah-Docs/background.jpg);
+    
+}
+
+#drinkpic {
+    max-width:400px;
+    max-height:400px;
+    margin-bottom:20px;
+    border: solid 2px black;
+}
+
+hr{
+    transform:rotate(2deg);
+    position:relative;
+    border:none;
+    height:1px;
+    background:black;
+  }
+
+.button {
+    font-family: 'Special Elite', cursive;
+    color:white;
+}
+
+.recipe-writing {
+    font-family: 'Caveat', cursive;
+    font-size:120%;
+}
+
+.history-background {
+    font-family: 'Special Elite', cursive;
+
+}
+
+h3 {
+    font-family: 'Special Elite', cursive;
+    font-weight:bold;
+}
+h2 {
+    font-family: 'Special Elite', cursive;
+}
+
+.bev-title {
+    font-family: 'Special Elite', cursive;
+    font-weight:bold;
+    color:white;
+}
+
+footer {
+    background-color:black;
+    height: 105px;
+}
+
+blockquote {
+    color:white;
+    font-family: 'Special Elite', cursive;
+}
