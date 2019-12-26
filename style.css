@@ -115,12 +115,17 @@ hr{
 
 }
 
+h1, h2 {
+    font-family: 'Special Elite', cursive;
+}
+
 h3 {
     font-family: 'Special Elite', cursive;
     font-weight:bold;
 }
-h2 {
-    font-family: 'Special Elite', cursive;
+
+#savedHeader {
+    color: white;
 }
 
 .bev-title {
@@ -130,11 +135,13 @@ h2 {
 }
 
 footer {
-    background-color:black;
-    height: 105px;
+    
 }
 
 blockquote {
+    background-color:black;
+    height: 105px;
     color:white;
     font-family: 'Special Elite', cursive;
+    margin-bottom: 0;
 }
