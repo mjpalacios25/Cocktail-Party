@@ -4,7 +4,7 @@ var recipes = ["margarita", "manhattan"];
 var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?"; 
 var cockatailParam = {};
 var photoURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?"; 
-var cockatailParam = {};
+var photoParam = {};
 
 
 //build URL functions
