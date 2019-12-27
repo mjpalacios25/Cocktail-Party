@@ -1,11 +1,12 @@
 $(document).foundation();
 
-var recipes = ["margarita", "manhattan"];
+var recipes = ["margarita", "old fashioned", "negroni"];
 var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?"; 
 var cockatailParam = {};
-var photoURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?"; 
-var photoParam = {};
+var photoURL = "https://api.unsplash.com/search/photos?"; 
+var photoParam = {"client_id" : "9ccf8abd6ffa752714d94efb42bacd6237e94e7c0e2662daa68443da0ec9c8d5"};
 
+var drinkNum = 0;
 
 //build URL functions
 
@@ -13,14 +14,21 @@ function buildCocktailUrl(cocktails) {
     cockatailParam.s = cocktails;
     console.log(cockatailParam.s);
 
-    var cocktailShallowEncode = $.param(cockatailParam, true);
-
-    cocktailCall = cocktailURL + decodeURIComponent(cocktailShallowEncode) ;
+    var cocktailCall = cocktailURL + $.param(cockatailParam) ;
     console.log(cocktailCall);
 
     return cocktailCall;
 }
 
+function buildPhotoUrl(photo) {
+    photoParam.query = photo + "-cocktail";
+    console.log(photoParam.query);
+
+    var photoCall = photoURL + $.param(photoParam) ;
+    console.log(photoCall);
+
+    return photoCall;
+}
 
 //get and save functions
 function saveRecipe(){
@@ -40,11 +48,6 @@ function getRecipe(){
     if(storedRecipes){
         recipes = storedRecipes;
         console.log(recipes)
-        //if creation needed use this format
-        // for(i=0 ; i < recipes.length; i++){
-        // var newLi = $("<li class = 'list-group-item pastCities btn'>").text(cities[i]);
-        // pastSearchesEl.append(newLi)
-        // }
     } 
 }
 
@@ -54,13 +57,13 @@ function buildCards(response) {
         $("#savedHeader").text("You dont have any saved receipes")
     } else {
         $("#savedHeader").text("My Recipes");
-        //put in a for loop or for each function
+        
         var newCell = $("<div>").addClass("cell");
         var newCard = $("<div>").addClass("card");
-        var newImg = $("<img>").attr("src", response.drinks[0].strDrinkThumb)
+        var newImg = $("<img>").attr("id", "drink" + drinkNum)
         var newCardDivider = $("<div>").addClass("card-divider");
         var newCardContent = $("<div>").addClass("card-section");
-        var newCardHeader = $("<h2>").text(response.drinks[0].strDrink);
+        var newCardHeader = $("<h2>").text(response.drinks[0].strDrink + drinkNum);
 
         $(".cardContainer").append(newCell);
         newCell.append(newCard);
@@ -69,18 +72,58 @@ function buildCards(response) {
     }
 }
 
-for(i=0; i < recipes.length; i++) {
+//AJAX calls for recipes and photos... put into setInterval functions to syncronize API pulls
+function getDrinks(){
+    var recipeLength = recipes.length - 1;
+    console.log(recipeLength)
+
+    var recipeLoop = setInterval(function(){
+
+    var drinkCall = buildCocktailUrl(recipes[recipeLength]);
+    recipeLength--;
 
     $.ajax({
-    url: buildCocktailUrl(recipes[i]),
+    url: drinkCall,
     method: "GET"
-    }).then(function(response) {
-        console.log(response);
-        buildCards(response);
-        console.log(response.drinks[0].strDrink);
-    
+    }).then(function(response){
+       drinkNum += 1; 
+       console.log(drinkNum);
+       console.log(response);
+       buildCards(response); 
     })
-}
 
+    if(recipeLength == -1){
+        clearInterval(recipeLoop)
+    }
 
-    
+    }, 100)
+
+} 
+
+function getPhotos(){
+    var recipeLength = recipes.length - 1;
+    var drinkNum = 0
+    var photoLoop = setInterval(function(){
+
+        var photoCall = buildPhotoUrl(recipes[recipeLength]);
+        recipeLength--;
+
+        $.ajax({
+            url: photoCall,
+            method: "GET"
+            }).then(function(photoResponse){
+                drinkNum += 1; 
+                console.log("#drink" + drinkNum);
+                console.log(drinkNum)
+                console.log(photoResponse);
+                $("#drink" + drinkNum).attr("src", photoResponse.results[1].urls.small)
+                    
+                })
+        if(recipeLength == -1){
+        clearInterval(photoLoop)
+    }
+    }, 100)
+        
+}    
+getDrinks();
+setTimeout(getPhotos, 1000)
