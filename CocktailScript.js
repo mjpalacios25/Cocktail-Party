@@ -1,18 +1,19 @@
 $(document).foundation();
 
-var recipes = ["margarita", "old fashioned", "negroni"];
-var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?"; 
+var recipes = ["11003", "11001", "11007"];
+var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?"; 
 var cockatailParam = {};
 var photoURL = "https://api.unsplash.com/search/photos?"; 
 var photoParam = {"client_id" : "9ccf8abd6ffa752714d94efb42bacd6237e94e7c0e2662daa68443da0ec9c8d5"};
 
 var drinkNum = 0;
+var photoRecipeName = [];
 
 //build URL functions
 
 function buildCocktailUrl(cocktails) {
-    cockatailParam.s = cocktails;
-    console.log(cockatailParam.s);
+    cockatailParam.i = cocktails;
+    console.log(cockatailParam.i);
 
     var cocktailCall = cocktailURL + $.param(cockatailParam) ;
     console.log(cocktailCall);
@@ -35,7 +36,7 @@ function saveRecipe(){
     if(!recipes){
         recipes = []
     } else{
-    recipes.push($("#searchInput").val().trim());
+    //recipes.push($("#searchInput").val().trim());
     localStorage.setItem("savedRecipes", JSON.stringify(recipes)) 
     }
 
@@ -63,7 +64,7 @@ function buildCards(response) {
         var newImg = $("<img>").attr("id", "drink" + drinkNum)
         var newCardDivider = $("<div>").addClass("card-divider");
         var newCardContent = $("<div>").addClass("card-section");
-        var newCardHeader = $("<h2>").text(response.drinks[0].strDrink + drinkNum);
+        var newCardHeader = $("<h4>").text(response.drinks[0].strDrink + drinkNum);
 
         $(".cardContainer").append(newCell);
         newCell.append(newCard);
@@ -74,13 +75,13 @@ function buildCards(response) {
 
 //AJAX calls for recipes and photos... put into setInterval functions to syncronize API pulls
 function getDrinks(){
-    var recipeLength = recipes.length - 1;
+    var recipeLength = recipes.length - recipes.length;
     console.log(recipeLength)
 
     var recipeLoop = setInterval(function(){
 
     var drinkCall = buildCocktailUrl(recipes[recipeLength]);
-    recipeLength--;
+    recipeLength++;
 
     $.ajax({
     url: drinkCall,
@@ -90,9 +91,11 @@ function getDrinks(){
        console.log(drinkNum);
        console.log(response);
        buildCards(response); 
+
+       photoRecipeName.push(response.drinks[0].strDrink)
     })
 
-    if(recipeLength == -1){
+    if(recipeLength == recipes.length){
         clearInterval(recipeLoop)
     }
 
@@ -101,12 +104,12 @@ function getDrinks(){
 } 
 
 function getPhotos(){
-    var recipeLength = recipes.length - 1;
+    var photoRecipeNameLength = photoRecipeName.length - photoRecipeName.length;
     var drinkNum = 0
     var photoLoop = setInterval(function(){
 
-        var photoCall = buildPhotoUrl(recipes[recipeLength]);
-        recipeLength--;
+        var photoCall = buildPhotoUrl(photoRecipeName[photoRecipeNameLength]);
+        photoRecipeNameLength++;
 
         $.ajax({
             url: photoCall,
@@ -119,11 +122,12 @@ function getPhotos(){
                 $("#drink" + drinkNum).attr("src", photoResponse.results[1].urls.small)
                     
                 })
-        if(recipeLength == -1){
+        if(photoRecipeNameLength == photoRecipeName.length){
         clearInterval(photoLoop)
     }
     }, 100)
         
 }    
 getDrinks();
+console.log(photoRecipeName)
 setTimeout(getPhotos, 1000)
