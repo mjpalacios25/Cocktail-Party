@@ -13,32 +13,30 @@
 
 
     <style>
-    
     body {
-      font-family: 'Special Elite', cursive;
-      background: url("./parchmentbg.jpg");
-      background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
-      -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
-      margin: 0; /* to remove the default white margin of body */
-      padding: 0; /* to remove the default white margin of body */
-      overflow: hidden;
-      z-index: 20;
-     }
-     
-     a {
-       color: white;
-       font-weight: normal;
-     }
+  font-family: 'Special Elite', cursive;
+  background: url("./parchmentbg.jpg");
+  background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
+  -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+  margin: 0; /* to remove the default white margin of body */
+  padding: 0; /* to remove the default white margin of body */
+  overflow: hidden;
+  z-index: 20;
+ }
+    
     </style>
   </head>
   
   <body>
-    <div class="medium-2 columns" id = "sidebar">
+    <div class="medium-2 columns hide-for-small-only" id = "sidebar">
       <div id = "sidebar-content">
       <img src="assets/logo/logo.jpeg" alt="company logo">
       
       
       <ul class="vertical menu accordion-menu" style = "font-weight: bold; color: black;" data-accordion-menu>
+        <li>
+          <a href="savedRecipes.html" class = "menu-title">Your Drinks!</a>
+        </li>
         <li>
           <a href="#" class = "menu-title">Seasonal</a>
           <ul class="menu vertical nested is-active" style="color: black;">
@@ -85,7 +83,7 @@
  <div class="input-group">
     <input class = "input-group-field" type="search" placeholder="Search" id="searchValue">
     <div class = "input-group-button">
-      <input type = "submit" class="button mr" value = "Search" id="submitbtn">
+      <input type = "submit" class="button mr" value = "Search" id="submitbtn" style="background-color: peru;">
     </div>
 </div>
   
@@ -98,27 +96,28 @@
       <ul class="orbit-container">
         <li class="is-active orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" src="./assets/CRANBERRY-MARTINI.jpg" alt="Cranberry Martini">
-            <figcaption class="orbit-caption"><p>Cranberry Martinis are a great addition to any holiday party. They bring the cheer and sweetness of the holdiay, with the classic burn of gin!</p></figcaption>
+            <img class="orbit-image" src="https://www.martinellis.com/wp-content/uploads/2017/01/Drink-Martinellis-Sangria.jpg" alt="Sangria">
+            <figcaption class="orbit-caption"><p>The Sangria is a great mixture of red wine and fruit, with the fruit accentuating the natural sweetness one finds in red wine.</p></figcaption>
           </figure>
         </li>
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" src="./assets/The-Cool-Yule-Mule.jpg" alt="A Yule Mule">
-            <figcaption class="orbit-caption"><p>This will give you a kick, but hopefully leave your memory of the holiday intact!</p></figcaption>
+            <img class="orbit-image" src="https://www.patrontequila.com/binaries/content/gallery/patrontequila/recipes/patron-extra-anejo/oldest-fashion/patron_lifestyle_oldestfashion.jpg" alt="old-fashion">
+            <figcaption class="orbit-caption"><p>One of the original cocktails, the Old Fashion is a must for anyone of class.</p></figcaption>
           </figure>
         </li>
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" src="./assets/White-Christmas.jpg" alt="White Christmas">
-            <figcaption class="orbit-caption"><p>Nothing says Christmas more than a layer of freshly fallen snow, and this drink sure brings that spirit. Don't let it's cheery appearence deceive you though, it packs a punch.
+            <img class="orbit-image" src="https://d256619kyxncpv.cloudfront.net/gui/img/2019/02/04/10/2019020410_15492751294974_c.jpg" alt="White Russian">
+            <figcaption class="orbit-caption"><p>Russia is a land of hard winters and excessive alcohol, and the White Russian does a great job in representing that. 
             </p></figcaption>
           </figure>
         </li>
         <li class="orbit-slide">
           <figure class="orbit-figure">
-            <img class="orbit-image" src="./assets/k-u-lwoTuByIuC4-unsplash.jpg" alt="Space">
-            <figcaption class="orbit-caption">Outta This World</figcaption>
+            <img class="orbit-image" src="https://aspiringwinos.com/wp-content/uploads/How-to-Host-A-Mimosa-Brunch-long.jpg" alt="Mimosa">
+            <figcaption class="orbit-caption"><p>A staple of brunches everywhere, the Mimosa is a well known drink that does an amazing job in hiding its alcohol content behind its fruity sweetness.
+            </p></figcaption>
           </figure>
         </li>
       </ul>
