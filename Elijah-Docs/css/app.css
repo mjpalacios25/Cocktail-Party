@@ -4,6 +4,14 @@ font-family: 'Special Elite', cursive;*/
     margin-bottom:100px;
 }
 
+#logo-title {
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    color: gold;
+    background-color: rgba(0,0,0,.5);
+}
+
 .strength {
     font-family: 'Special Elite', cursive;
 }
@@ -49,7 +57,7 @@ hr{
 }
 
 .recipe-writing {
-    font-family: 'Caveat', cursive;
+    font-family: 'Special Elite', cursive;
     font-size:120%;
 }
 
