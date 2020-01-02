@@ -11,29 +11,76 @@
   </head>
   <body>
       <!--NAVBAR-->
-        <div class="top-bar">
-                <div class="top-bar-left">
-                  <ul class="dropdown menu">
-                    <li class="menu-text"><i class="fas fa-align-justify"></i></li>
-                    <li><a href="#">Back</a></li>
+      <div class="off-canvas position-left" id="sidebar" data-off-canvas>
+        <!-- Your menu or Off-canvas content goes here -->
+         <div id="logo-contain">
+            <img src="http://www.cocktailsandbars.com/wp-content/uploads/2018/11/bancho-bar-cocktailsandbars-0G6A3193.jpg" alt="company logo" id="logopic"> 
+            <h2 id="logo-title">Cocktail Party</h2>
+        </div>
+        <button class="close-button" aria-label="Close menu" type="button" data-close style="color: gold; z-index: 11;">
+            <span aria-hidden="true">&times;</span>
+        </button> 
+      
+        <ul class="vertical menu accordion-menu" style = "font-weight: bold; color: black;" data-accordion-menu>
+            <li>
+              <a href="#" class = "menu-title">Seasonal</a>
+              <ul class="menu vertical nested is-active" style="color: black;">
+                <li><a href="#">Fall</a></li>
+                <li><a href="#">Winter</a></li>
+                <li><a href="#">Spring</a></li>
+                <li><a href="#">Summer</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class = "menu-title">By the 5 Tastes</a>
+              <ul class="menu vertical nested is-active" style="color: black;">
+                <li><a href="#">Sweet</a></li>
+                <li><a href="#">Salty</a></li>
+                <li><a href="#">Sour</a></li>
+                <li><a href="#">Bitter</a></li>
+                <li><a href="#">Umami</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class = "menu-title">Hot Drinks</a>
+            </li>
+            <li>
+              <a href="#" class = "menu-title">Frozen Drinks</a>
+            </li>
+            <li>
+              <a href="#" class = "menu-title">Luck of the Draw!</a>
+            </li>
+          </ul>
+  
+
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+        <!-- Nav Bar -->
+        <div class="top-bar" data-hide-for="">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li><button class="menu-icon" type="button" data-toggle="sidebar"></button></li>
                     <li><a href="#">Home</a></li>
+                    <li><a href="#">Back</a></li>
                     <li><a href="#">My Recipes</a></li>
+                    <li><a href="#">Store</a></li>
                   </ul>
-                </div>
-                <div class="top-bar-right">
-                  <ul class="menu">
-                    <li><input type="search" placeholder="Search"></li>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li><input type="search" placeholder="Search" id="drinkSearch"></li>
                     <button type="button" class="button hollow">Search</button>
                   </ul>
-                </div>
-              </div>
+            </div> 
+        </div>
                  
     <!--END NAVBAR-->
     <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell medium-7">
-                  <h3 class="bev-title">Old Fashioned</h3>
-                  <p><img src="oldfashioned.jpg"><br>
+                  <h3 class="bev-title"></h3>
+                  <p><img id="drink-img"><br>
                   <span class="strength">Strength</span> <i class="  fas fa-skull-crossbones"></i><i class="fas fa-skull-crossbones"></i><i class="fas fa-skull-crossbones"></i>
                   </p>
                   
@@ -41,18 +88,21 @@
                 <div class="cell medium-5">
                   <h3>Recipe</h3>
                   <hr>
-                  <p class="recipe-writing"><strong>INGREDIENTS:</strong><br>
-                        2 oz<br>
-                        1⁄4 oz Simple syrup<br>
-                        2 dashes Angostura bitters<br>
-                        
-                        <strong>GARNISH:</strong><br>Orange peel<br>
-                        <strong>GLASS:</strong><br>Old Fashioned<br>
-                        <strong>HOW TO MAKE:</strong><br>
-                        Add all ingredients into a mixing glass with ice and stir.
-                        Strain into an Old Fashioned glass over fresh ice.
-                        Express the oil of an orange peel over glass and garnish with the peel.</p>
-                        <button class="secondary button hollow"><i class="fas fa-plus"></i> Add to My Recipes</button>
+
+                  <div class="grid-container">
+                  <div class="grid-x grid-margin-x">
+                        <br>
+                        <h5 class='recipe-measure' style="font-family: 'Special Elite', cursive;"></h5><br>
+                        <h5 class='recipe-writing float-right'></h5><br>
+                        </div>
+                  </div>
+                  <p><strong>GLASS:</strong></p><br>
+                        <h5 class='glassware' style="font-family: 'Special Elite', cursive;"></h5><br>
+
+                  <p><strong>HOW TO MAKE:</strong></p><br>
+                        <h5 class='instructions' style="font-family: 'Special Elite', cursive;"></h5><br>
+
+                        <button class="secondary button hollow recipe-add"><i class="fas fa-plus"></i> Add to My Recipes</button>
                         <button class="secondary button hollow"><i class="fab fa-amazon"></i></button>
                 </div>
               </div>
@@ -61,15 +111,8 @@
               <div class="grid-container text-center">
               <div class="grid-x grid-margin-x">
                   <div class="cell medium-12">
-                  <h2 class="text-center">History</h2>
-                    <p class="history-background">
-                            "The first mention in print of "old fashioned cocktails" was in the Chicago Daily 
-                            Tribune in February 1880.[7] However, the Pendennis Club, a gentlemen's club founded 
-                            in 1881 in Louisville, Kentucky, claims the old fashioned cocktail was invented there. 
-                            The recipe was said to have been invented by a bartender at that club in honor of Colonel 
-                            James E. Pepper, a prominent bourbon distiller, who brought it to the Waldorf-Astoria Hotel 
-                            bar in New York City.[8]"
-                      </p>
+                  <h2 class="text-center button hollow" id="random-button">Random Cocktail</h2>
+                    
                 </div>
               </div>
             </div>
