@@ -1,9 +1,20 @@
+
+ 
+
+ a {
+  color: white;
+  font-weight: normal;
+  margin-top: -2px;
+}
+
 #sidebar {
     padding-top: 10px;
     position: fixed;
     height: 100%;
     
    }
+
+
 #sidebar-content{
   background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
   color: white;
@@ -12,6 +23,7 @@
   z-index: 2;
   backdrop-filter: blur(2px);
 }
+
 #maincontent {
      position: relative;
      float: left;
@@ -42,13 +54,14 @@
 
 .orbit-image {
       height: 570px;
-      width: auto;
+      width: 100%;
   }
 
   .orbit-container {
     position: relative;
     height: 570x; 
-  margin: 0px;}
+    margin: 0px;
+  }
   
   .orbit-caption {
     position: absolute;
@@ -80,5 +93,5 @@
     .orbit-caption p {
       font-size: 12px;
       font-weight: 400; } }
-  .orbit-bullets {
-    display: none; }
+    .orbit-bullets {
+      display: none; }
