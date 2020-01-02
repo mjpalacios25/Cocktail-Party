@@ -61,10 +61,10 @@ function buildCards(response) {
         
         var newCell = $("<div>").addClass("cell");
         var newCard = $("<div>").addClass("card");
-        var newImg = $("<img>").attr("id", "drink" + drinkNum)
+        var newImg = $("<img>").attr("id", "drink" + drinkNum).addClass("drinkpic");
         var newCardDivider = $("<div>").addClass("card-divider");
         var newCardContent = $("<div>").addClass("card-section");
-        var newCardHeader = $("<h4>").text(response.drinks[0].strDrink + drinkNum);
+        var newCardHeader = $("<h4>").text(response.drinks[0].strDrink);
 
         $(".cardContainer").append(newCell);
         newCell.append(newCard);
@@ -119,7 +119,7 @@ function getPhotos(){
                 console.log("#drink" + drinkNum);
                 console.log(drinkNum)
                 console.log(photoResponse);
-                $("#drink" + drinkNum).attr("src", photoResponse.results[1].urls.small)
+                $("#drink" + drinkNum).attr("src", photoResponse.results[2].urls.small)
                     
                 })
         if(photoRecipeNameLength == photoRecipeName.length){
