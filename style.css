@@ -85,9 +85,9 @@ body {
     
 }
 
-#drinkpic {
-    max-width:400px;
-    max-height:400px;
+.drinkpic {
+    max-width:350px;
+    max-height:250px;
     margin-bottom:20px;
     border: solid 2px black;
 }
