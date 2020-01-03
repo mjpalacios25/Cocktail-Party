@@ -1,6 +1,6 @@
 $(document).foundation();
 
-var recipes = ["11003", "11001", "11007"];
+var recipes = ["11003", "11001", "11007", "11007"];
 var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?"; 
 var cockatailParam = {};
 var photoURL = "https://api.unsplash.com/search/photos?"; 
@@ -60,7 +60,7 @@ function buildCards(response) {
         
         var newCell = $("<div>").addClass("cell");
         var newCard = $("<div>").addClass("card");
-        var newImg = $("<img>").attr("id", "drink" + drinkNum).addClass("drinkpic");
+        var newImg = $("<img>").attr("id", "drink" + drinkNum).addClass("drinkpic").attr("dataid", response.drinks[0].idDrink);
         var newCardDivider = $("<div>").addClass("card-divider");
         var newCardContent = $("<div>").addClass("card-section");
         var newCardHeader = $("<h4>").text(response.drinks[0].strDrink);
@@ -74,6 +74,8 @@ function buildCards(response) {
 
 //AJAX calls for recipes and photos... put into setInterval functions to syncronize API pulls
 function getDrinks(){
+    recipes = [...new Set(recipes)];
+    console.log(recipes);
     var recipeLength = recipes.length - recipes.length;
     console.log(recipeLength)
 
@@ -130,6 +132,13 @@ function getPhotos(){
 getDrinks();
 console.log(photoRecipeName)
 setTimeout(getPhotos, 1000);
+
+//click event to go to grab dataid attribute then go to recipe page
+
+
+
+
+
 
 
 //search bar 
