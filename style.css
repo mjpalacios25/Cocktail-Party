@@ -139,6 +139,7 @@ h3, h4 {
 footer {
     background-color:black;
     height: 105px;
+    bottom: 0;
 }
 
 blockquote {
