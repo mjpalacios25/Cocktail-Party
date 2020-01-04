@@ -70,20 +70,17 @@ $('#random-button').on('click', function(e) {
 
         //RECIPE SAVE
         $('.recipe-add').on('click', function(e) {
-        e.preventDefault();   
-            var drinkId = response.drinks[0].idDrink;          
+        e.preventDefault();          
             var localValue = localStorage.getItem('value1');
             var bevArr = localValue ? JSON.parse(localValue) : [];   
             var drinkId = response.drinks[0].idDrink;
             bevArr.push(drinkId);
-            var maxAllowed = 5;
-            while (textArr.length > maxAllowed) {    // CREATES MAX NUMBER OF ARRAY VALUES
-                 textArr.shift();
-            }
-            localValue = JSON.stringify(textArr);
+            localValue = JSON.stringify(bevArr);
             localStorage.setItem('value1', localValue);  
-         
         });
+
+
+
 
   });
 });
