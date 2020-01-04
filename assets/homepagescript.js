@@ -34,7 +34,7 @@ function fallDrinks (){
                 fallDrinkList.push(response.drinks[0].idDrink);
            
             console.log(fallDrinkList);
-            localStorage.setItem("Fall Drink List", JSON.stringify(fallDrinkList));
+            localStorage.setItem("fall Drink List", JSON.stringify(fallDrinkList));
         }})
     }
 };
@@ -62,7 +62,7 @@ function winterDrinks (){
                 winterDrinkList.push(response.drinks[0].idDrink);
            
             console.log(winterDrinkList);
-            localStorage.setItem("Winter Drink List", JSON.stringify(winterDrinkList));
+            localStorage.setItem("winter Drink List", JSON.stringify(winterDrinkList));
         }})
     }
 };
@@ -91,7 +91,7 @@ function springDrinks (){
             
            
             console.log(springDrinkList);
-            localStorage.setItem("Spring Drink List", JSON.stringify(springDrinkList));
+            localStorage.setItem("spring Drink List", JSON.stringify(springDrinkList));
         }})
     }
 };
@@ -120,7 +120,7 @@ function summerDrinks (){
             
            
             console.log(summerDrinkList);
-            localStorage.setItem("Summer Drink List", JSON.stringify(summerDrinkList));
+            localStorage.setItem("summer Drink List", JSON.stringify(summerDrinkList));
         }})
     }
 };
@@ -161,7 +161,7 @@ function hotDrinks (){
             
            
             console.log(hotDrinkList);
-            localStorage.setItem("Hot Drink List", JSON.stringify(hotDrinkList));
+            localStorage.setItem("hot Drink List", JSON.stringify(hotDrinkList));
         }})
     }
 };
@@ -203,7 +203,7 @@ function frozenDrinks (){
             
            
             console.log(frozenDrinkList);
-            localStorage.setItem("Frozen Drink List", JSON.stringify(frozenDrinkList));
+            localStorage.setItem("frozen Drink List", JSON.stringify(frozenDrinkList));
         }})
     }
 };
@@ -214,45 +214,140 @@ function saltyDrinks (){
 
     
         var query = "salt";
-        var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i="+ query;
+        var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
+        + query;
  
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response)
-            for (var i = 0; i < queryList.length; i++){    
+            for (var i = 0; i < response.drinks.length; i++){    
            if (response.drinks !=null){ 
                 saltyDrinkList.push(response.drinks[i].idDrink);
            }}
             console.log(saltyDrinkList);
-            localStorage.setItem("Salty Drink List", JSON.stringify(saltyDrinkList));
+            localStorage.setItem("salty Drink List", JSON.stringify(saltyDrinkList));
         })
     
 };
+
+function sourDrinks (){
+
+    sourDrinkList = [];
+
+    
+    var queryList = ["lemon", "lime", "sour mix", "lemon juice", "lime juice"];
+
+    for (var i = -0; i < queryList.length; i++){
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
+    + queryList[i];
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
+            for (var i = 0; i < response.drinks.length; i++){    
+           if (response.drinks !=null){ 
+                sourDrinkList.push(response.drinks[i].idDrink);
+           }}
+            console.log(sourDrinkList);
+            localStorage.setItem("sour Drink List", JSON.stringify(sourDrinkList));
+        })
+    
+}};
+
+function bitterDrinks (){
+
+    bitterDrinkList = [];
+
+    
+    var queryList = ["aperol", "bitters"];
+    
+
+    for (var i = 0; i < queryList.length; i++){
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
+    + queryList[i];
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
+            for (var i = 0; i < response.drinks.length; i++){    
+           if (response.drinks !=null){ 
+                bitterDrinkList.push(response.drinks[i].idDrink);
+           }}
+            console.log(bitterDrinkList);
+            localStorage.setItem("bitter Drink List", JSON.stringify(bitterDrinkList));
+        })
+    
+}};
+
+function umamiDrinks (){
+
+    umamiDrinkList = [];
+    
+    var queryList = ["egg", "egg white", "tomato juice", "olive"];
+       
+    for (var i = 0; i < queryList.length; i++){
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
+    + queryList[i];
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response)
+            for (var i = 0; i < response.drinks.length; i++){    
+           if (response.drinks !=null){ 
+                umamiDrinkList.push(response.drinks[i].idDrink);
+           }}
+            console.log(umamiDrinkList);
+            localStorage.setItem("umami Drink List", JSON.stringify(umamiDrinkList));
+        })
+    
+}};
 
 function sweetDrinks (){
 
-    saltyDrinkList = [];
-
+    sweetDrinkList = [];
     
-        var query = "salt";
-        var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?i="+ query;
- 
+    var queryList = ["spiced rum", "banana", "honey", "strawberries", "sugar", "cocoa powder", "vanilla extract", "orange juice", "cranberry juice", "banana liqueur", "chocolate syrup", "kahlua", "pineapple juice", "grenadine"];
+       
+    for (var i = 0; i < queryList.length; i++){
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
+    + queryList[i];
+        
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
             console.log(response)
-            for (var i = 0; i < queryList.length; i++){    
+            for (var i = 0; i < response.drinks.length; i++){    
            if (response.drinks !=null){ 
-                saltyDrinkList.push(response.drinks[i].idDrink);
+                sweetDrinkList.push(response.drinks[i].idDrink);
            }}
-            console.log(saltyDrinkList);
-            localStorage.setItem("Salty Drink List", JSON.stringify(saltyDrinkList));
+            console.log(sweetDrinkList);
+            localStorage.setItem("sweet Drink List", JSON.stringify(sweetDrinkList));
         })
     
-};
+}};
+
+function random() {
+    queryURL = "www.thecocktaildb.com/api/json/v1/1/random.php";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(reponse)
+            if (reponse.drinks !=null){
+                localStorage.setItem("random Drink List", JSON.stringify(reponse.drinks.idDrink));
+            };
+        })
+}
 
 fallDrinks();
 winterDrinks();
@@ -261,6 +356,15 @@ summerDrinks();
 hotDrinks();
 frozenDrinks();
 saltyDrinks();
+sourDrinks();
+bitterDrinks();
+umamiDrinks();
+sweetDrinks();
+random();
+
+
+
+
 
 function searchResponse (searchValue){
     searchResults.length = 0;
@@ -291,6 +395,7 @@ function searchResponse (searchValue){
         }
        
         console.log(searchResults);
+
         localStorage.setItem("results", JSON.stringify(searchResults));
     }})
 
@@ -306,6 +411,7 @@ function searchResponse (searchValue){
          }
         
         console.log(searchResults);
+        
         localStorage.setItem("results", JSON.stringify(searchResults));
     }})
 
@@ -322,10 +428,24 @@ function searchResponse (searchValue){
     }}
 
         console.log(searchResults);
+        
         localStorage.setItem("results", JSON.stringify(searchResults));
     })
-
+    
+    
 }
+
+$("#sidebarMenu").on("click", ".quickFilter", function(event) {
+    event.preventDefault();
+
+    var quickFilterID = $(this).attr("id") + " Drink List";
+    console.log(quickFilterID);
+
+    var filterResults = JSON.parse(localStorage.getItem(quickFilterID));
+    console.log(filterResults);
+    localStorage.setItem("results", JSON.stringify(filterResults))
+
+});
 
 
 $("#submitbtn").on("click", function(event) {
@@ -333,3 +453,4 @@ $("#submitbtn").on("click", function(event) {
     searchValue = $("#searchValue").val().trim();
     searchResponse(searchValue);
 });
+
