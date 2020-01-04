@@ -4,6 +4,19 @@ font-family: 'Special Elite', cursive;*/
     margin-bottom:100px;
 }
 
+#logo-contain {
+    position: relative;
+    width: auto;
+    height: auto;
+    z-index: 10;
+}
+
+#logopic {
+    max-width:auto;
+    max-height:auto;
+    border: solid 2px black;
+}
+
 #logo-title {
     position: absolute;
     top: 20%;

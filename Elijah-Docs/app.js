@@ -4,7 +4,7 @@ $(document).foundation()
 var valueKey = JSON.parse(localStorage.getItem("results"));
 var queryURL2 = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + valueKey
 var bevArr = [];
-var addID = '';
+var addID;
 
     $.ajax({
         url: queryURL2,
@@ -68,18 +68,25 @@ $('#random-button').on('click', function(e) {
             if (key.charAt(5) == 'g' && key.charAt(6) == 'r' && nameObj[key] != null) {
             $('.recipe-writing').append(nameObj[key] + "<br>");
             }
+            
           });
+
           addID = response.drinks[0].idDrink;
+
+        
+
   });
 });
 
 //RECIPE SAVE
-$('.recipe-add').on('click', function(e) {
-  e.preventDefault();          
-      var drinkId = addID
-      bevArr.push(drinkId);
-      localStorage.setItem('savedRecipes', JSON.stringify(drinkId));  
-  });
+        $('.recipe-add').on('click', function(e) {
+        e.preventDefault();   
+            var drinkId = addID;          
+            bevArr.push(drinkId);
+            localStorage.setItem("savedRecipes", JSON.stringify(bevArr)) 
+            console.log(bevArr)
+         
+        });
 
 
 });

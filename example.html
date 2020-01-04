@@ -5,13 +5,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cocktail Info</title>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="../Elijah-Docs/app.css">
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Caveat|Special+Elite&display=swap" rel="stylesheet">
   </head>
   <body>
-      <!--NAVBAR-->
-      <div class="off-canvas position-left" id="sidebar" data-off-canvas>
+    <div class="off-canvas position-left" id="sidebar" data-off-canvas>
         <!-- Your menu or Off-canvas content goes here -->
          <div id="logo-contain">
             <img src="http://www.cocktailsandbars.com/wp-content/uploads/2018/11/bancho-bar-cocktailsandbars-0G6A3193.jpg" alt="company logo" id="logopic"> 
@@ -61,46 +64,45 @@
             <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li><button class="menu-icon" type="button" data-toggle="sidebar"></button></li>
-                    <li><a href="../homepage.html">Home</a></li>
-                    <li><a href="../savedRecipes.html">My Recipes</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Back</a></li>
+                    <li><a href="#">My Recipes</a></li>
                     <li><a href="#">Store</a></li>
                   </ul>
             </div>
             <div class="top-bar-right">
                 <ul class="menu">
-                    <li><input type="search" placeholder="Search" id="drinkSearch"></li>
+                    <li><input type="search" placeholder="Search"></li>
                     <button type="button" class="button hollow">Search</button>
                   </ul>
             </div> 
         </div>
-                 
-    <!--END NAVBAR-->
-    <div class="grid-container">
+
+        <!--Content goes here-->
+        <div class="grid-container">
             <div class="grid-x grid-margin-x">
                 <div class="cell medium-7">
-                  <h3 class="bev-title"></h3>
-                  <p><img id="drink-img"><br>
+                  <h3 class="bev-title">Old Fashioned</h3>
+                  <p><img src="Elijah-Docs/oldfashioned.jpg" id="drinkpic"><br>
+                  <span class="strength">Strength</span> <i class="  fas fa-skull-crossbones"></i><i class="fas fa-skull-crossbones"></i><i class="fas fa-skull-crossbones"></i>
                   </p>
                   
                 </div>
                 <div class="cell medium-5">
                   <h3>Recipe</h3>
                   <hr>
-
-                  <div class="grid-container">
-                  <div class="grid-x grid-margin-x">
-                        <br>
-                        <h5 class='recipe-measure' style="font-family: 'Special Elite', cursive;"></h5><br>
-                        <h5 class='recipe-writing float-right'></h5><br>
-                        </div>
-                  </div>
-                  <p><strong>GLASS:</strong></p><br>
-                        <h5 class='glassware' style="font-family: 'Special Elite', cursive;"></h5><br>
-
-                  <p><strong>HOW TO MAKE:</strong></p><br>
-                        <h5 class='instructions' style="font-family: 'Special Elite', cursive;"></h5><br>
-
-                        <button class="secondary button hollow recipe-add"><i class="fas fa-plus"></i> Add to My Recipes</button>
+                  <p class="recipe-writing"><strong>INGREDIENTS:</strong><br>
+                        2 oz<br>
+                        1⁄4 oz Simple syrup<br>
+                        2 dashes Angostura bitters<br>
+                        
+                        <strong>GARNISH:</strong><br>Orange peel<br>
+                        <strong>GLASS:</strong><br>Old Fashioned<br>
+                        <strong>HOW TO MAKE:</strong><br>
+                        Add all ingredients into a mixing glass with ice and stir.
+                        Strain into an Old Fashioned glass over fresh ice.
+                        Express the oil of an orange peel over glass and garnish with the peel.</p>
+                        <button class="secondary button hollow"><i class="fas fa-plus"></i> Add to My Recipes</button>
                         <button class="secondary button hollow"><i class="fab fa-amazon"></i></button>
                 </div>
               </div>
@@ -109,8 +111,15 @@
               <div class="grid-container text-center">
               <div class="grid-x grid-margin-x">
                   <div class="cell medium-12">
-                  <h2 class="text-center button hollow" id="random-button">Random Cocktail</h2>
-                    
+                  <h2 class="text-center">History</h2>
+                    <p class="history-background">
+                            "The first mention in print of "old fashioned cocktails" was in the Chicago Daily 
+                            Tribune in February 1880.[7] However, the Pendennis Club, a gentlemen's club founded 
+                            in 1881 in Louisville, Kentucky, claims the old fashioned cocktail was invented there. 
+                            The recipe was said to have been invented by a bartender at that club in honor of Colonel 
+                            James E. Pepper, a prominent bourbon distiller, who brought it to the Waldorf-Astoria Hotel 
+                            bar in New York City.[8]"
+                      </p>
                 </div>
               </div>
             </div>
@@ -121,13 +130,14 @@
         </blockquote>
         </footer>
 
+    
+    </div>
 
-
-            
+      
     <script src="https://kit.fontawesome.com/76e73fc237.js" crossorigin="anonymous"></script>
-    <script src="../Elijah-Docs/js/jquery.js"></script>
-    <script src="../Elijah-Docs/js/what-input.js"></script>
-    <script src="../Elijah-Docs/js/foundation.js"></script>
-    <script src="../Elijah-Docs/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
+    <script src="CocktailScript.js"></script>
   </body>
 </html>
