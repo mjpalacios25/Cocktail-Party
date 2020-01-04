@@ -1,6 +1,6 @@
 $(document).foundation();
 
-var recipes = ["11003", "11001", "11007", "11007"];
+var recipes = ["11003"];
 var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?"; 
 var cockatailParam = {};
 var photoURL = "https://api.unsplash.com/search/photos?"; 
@@ -39,7 +39,7 @@ function buildPhotoUrl(photo) {
 //get and save functions
 function saveRecipe(){
 
-    localStorage.setItem("savedRecipes", JSON.stringify(recipes)) 
+    localStorage.setItem("results", JSON.stringify(results)) 
 
 };
 
@@ -142,6 +142,7 @@ function getPhotos(){
         $("img").click(function(){
             results = $(this).attr("dataid");
             console.log(results);
+            saveRecipe();
         })
             }
     }, 100)
