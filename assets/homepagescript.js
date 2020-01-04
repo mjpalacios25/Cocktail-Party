@@ -447,6 +447,13 @@ $("#sidebarMenu").on("click", ".quickFilter", function(event) {
 
 });
 
+$(".orbit-caption").on("click", ".orbitDrink", function(event) {
+    event.preventDefault();
+
+    var orbitDrinkID = $(this).attr("id");
+    localStorage.setItem("results", orbitDrinkID);
+    location.href = "Elijah-Docs/drinkinfo.html" 
+});
 
 $("#submitbtn").on("click", function(event) {
     event.preventDefault();
