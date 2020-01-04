@@ -65,14 +65,13 @@ function buildCards(response) {
         var newCard = $("<div>").addClass("card");
         var anchorTag = $("<a>").attr("href", "../Cocktail-Party/Elijah-Docs/drinkinfo.html");
         var newImg = $("<img>").attr("id", "drink" + drinkNum).addClass("drinkpic").attr("dataid", response.drinks[0].idDrink);
-        var newCardDivider = $("<div>").addClass("card-divider");
         var newCardContent = $("<div>").addClass("card-section");
         var newCardHeader = $("<h4>").text(response.drinks[0].strDrink);
 
         $(".cardContainer").append(newCell);
         newCell.append(newCard);
         anchorTag.append(newImg);
-        newCard.append(anchorTag, newCardDivider, newCardContent);
+        newCard.append(anchorTag, newCardContent);
         newCardContent.append(newCardHeader);    
     }
 
