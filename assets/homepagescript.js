@@ -336,15 +336,15 @@ function sweetDrinks (){
 }};
 
 function random() {
-    queryURL = "www.thecocktaildb.com/api/json/v1/1/random.php";
+    queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function (response) {
-            console.log(reponse)
-            if (reponse.drinks !=null){
-                localStorage.setItem("random Drink List", JSON.stringify(reponse.drinks.idDrink));
+            console.log(response)
+            if (response.drinks !=null){
+                localStorage.setItem("random Drink List", JSON.stringify(response.drinks.idDrink));
             };
         })
 }
@@ -425,15 +425,26 @@ function searchResponse (searchValue){
         for (var i = 0; i < response.drinks.length; i++){
             searchResults.push(response.drinks[i].idDrink);
         
-    }}
-
+        }
         console.log(searchResults);
         
         localStorage.setItem("results", JSON.stringify(searchResults));
-    })
+    }})
     
     
+    
+    var finalFilter = [...new Set(searchResults)];
+    console.log(finalFilter);
 }
+
+function searchFilter () {
+    setTimeout( function(){
+    var filter = JSON.parse(localStorage.getItem("results"));
+    var finalFilter = [...new Set(filter)];
+    console.log(finalFilter);
+
+    localStorage.setItem("results", JSON.stringify(finalFilter));
+}, 2000)};
 
 $("#sidebarMenu").on("click", ".quickFilter", function(event) {
     event.preventDefault();
@@ -443,7 +454,12 @@ $("#sidebarMenu").on("click", ".quickFilter", function(event) {
 
     var filterResults = JSON.parse(localStorage.getItem(quickFilterID));
     console.log(filterResults);
-    localStorage.setItem("results", JSON.stringify(filterResults))
+    var finalFilter  = [...new Set(filterResults)];
+    console.log(finalFilter);
+    localStorage.setItem("results", JSON.stringify(finalFilter));
+
+    
+    location.href = "#";
 
 });
 
@@ -459,5 +475,9 @@ $("#submitbtn").on("click", function(event) {
     event.preventDefault();
     searchValue = $("#searchValue").val().trim();
     searchResponse(searchValue);
+
+    searchFilter();
+
+    location.href = "#";
 });
 
