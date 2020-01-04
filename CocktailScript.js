@@ -1,6 +1,6 @@
 $(document).foundation();
 
-var recipes = ["11003", "11001", "11007"];
+var recipes = ["11003"];
 var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?"; 
 var cockatailParam = {};
 var photoURL = "https://api.unsplash.com/search/photos?"; 
@@ -9,10 +9,12 @@ var photoParam = {"client_id" : "9ccf8abd6ffa752714d94efb42bacd6237e94e7c0e2662d
 var drinkNum = 0;
 var photoRecipeName = [];
 
+var drinkSearch; 
 var searchValue = "";
-var searchResults = [];
+var results = [];
 
-//build URL functions
+$(document).ready(function(){
+    //build URL functions
 
 function buildCocktailUrl(cocktails) {
     cockatailParam.i = cocktails;
@@ -37,7 +39,7 @@ function buildPhotoUrl(photo) {
 //get and save functions
 function saveRecipe(){
 
-    localStorage.setItem("savedRecipes", JSON.stringify(recipes)) 
+    localStorage.setItem("results", JSON.stringify(results)) 
 
 };
 
@@ -53,6 +55,7 @@ function getRecipe(){
 
 //build card function
 function buildCards(response) {
+  
     if(!recipes) {
         $("#savedHeader").text("You dont have any saved receipes")
     } else {
@@ -60,25 +63,31 @@ function buildCards(response) {
         
         var newCell = $("<div>").addClass("cell");
         var newCard = $("<div>").addClass("card");
-        var newImg = $("<img>").attr("id", "drink" + drinkNum).addClass("drinkpic");
+        var anchorTag = $("<a>").attr("href", "../Cocktail-Party/Elijah-Docs/drinkinfo.html");
+        var newImg = $("<img>").attr("id", "drink" + drinkNum).addClass("drinkpic").attr("dataid", response.drinks[0].idDrink);
         var newCardDivider = $("<div>").addClass("card-divider");
         var newCardContent = $("<div>").addClass("card-section");
         var newCardHeader = $("<h4>").text(response.drinks[0].strDrink);
 
         $(".cardContainer").append(newCell);
         newCell.append(newCard);
-        newCard.append(newImg, newCardDivider, newCardContent);
+        anchorTag.append(newImg);
+        newCard.append(anchorTag, newCardDivider, newCardContent);
         newCardContent.append(newCardHeader);    
     }
+
+
+    
 }
 
 //AJAX calls for recipes and photos... put into setInterval functions to syncronize API pulls
 function getDrinks(){
+    recipes = [...new Set(recipes)];
+    console.log(recipes);
     var recipeLength = recipes.length - recipes.length;
     console.log(recipeLength)
 
     var recipeLoop = setInterval(function(){
-
     var drinkCall = buildCocktailUrl(recipes[recipeLength]);
     recipeLength++;
 
@@ -92,11 +101,17 @@ function getDrinks(){
        buildCards(response); 
 
        photoRecipeName.push(response.drinks[0].strDrink)
+
+       
     })
 
     if(recipeLength == recipes.length){
         clearInterval(recipeLoop)
+        
     }
+
+
+
 
     }, 100)
 
@@ -121,15 +136,26 @@ function getPhotos(){
                 $("#drink" + drinkNum).attr("src", photoResponse.results[3].urls.small)
                     
                 })
+
         if(photoRecipeNameLength == photoRecipeName.length){
         clearInterval(photoLoop)
-    }
+        $("img").click(function(){
+            results = $(this).attr("dataid");
+            console.log(results);
+            saveRecipe();
+        })
+            }
     }, 100)
         
 }    
 getDrinks();
 console.log(photoRecipeName)
 setTimeout(getPhotos, 1000);
+
+//click event to go to grab dataid attribute then go to recipe page
+
+
+
 
 
 //search bar 
@@ -204,3 +230,6 @@ $("#submitbtn").on("click", function(event) {
     searchValue = $("#searchValue").val().trim();
     searchResponse(searchValue);
 });
+
+})
+
