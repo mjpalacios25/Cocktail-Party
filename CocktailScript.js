@@ -1,6 +1,6 @@
 $(document).foundation();
 
-var recipes = ["11003"];
+var recipes = [];
 var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?"; 
 var cockatailParam = {};
 var photoURL = "https://api.unsplash.com/search/photos?"; 
@@ -56,9 +56,6 @@ function getRecipe(){
 //build card function
 function buildCards(response) {
   
-    if(!recipes) {
-        $("#savedHeader").text("You dont have any saved receipes")
-    } else {
         $("#savedHeader").text("My Recipes");
         
         var newCell = $("<div>").addClass("cell");
@@ -73,7 +70,7 @@ function buildCards(response) {
         anchorTag.append(newImg);
         newCard.append(anchorTag, newCardContent);
         newCardContent.append(newCardHeader);    
-    }
+    
 
 
     
@@ -147,6 +144,7 @@ function getPhotos(){
     }, 100)
         
 }    
+getRecipe();
 getDrinks();
 console.log(photoRecipeName)
 setTimeout(getPhotos, 1000);
