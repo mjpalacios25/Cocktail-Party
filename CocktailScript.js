@@ -45,7 +45,7 @@ function saveRecipe(){
 
 function getRecipe(){
     var storedRecipes = JSON.parse(localStorage.getItem("savedRecipes"));
-    console.log(storedCities)
+    console.log(storedRecipes)
 
     if(storedRecipes){
         recipes = storedRecipes;
