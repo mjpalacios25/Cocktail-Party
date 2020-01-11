@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocktail Info</title>
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Special+Elite&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="off-canvas position-left" id="sidebar" data-off-canvas>
+        <!-- Your menu or Off-canvas content goes here -->
+         <div id="logo-contain">
+            <img src="http://www.cocktailsandbars.com/wp-content/uploads/2018/11/bancho-bar-cocktailsandbars-0G6A3193.jpg" alt="company logo" id="logopic"> 
+            <h2 id="logo-title">Cocktail Party</h2>
+        </div>
+        <button class="close-button" aria-label="Close menu" type="button" data-close style="color: gold; z-index: 11;">
+            <span aria-hidden="true">&times;</span>
+        </button> 
+      
+        <ul class="vertical menu accordion-menu" style = "font-weight: bold; color: black;" data-accordion-menu>
+            <li>
+              <a href="#" class = "menu-title">Seasonal</a>
+              <ul class="menu vertical nested is-active" style="color: black;">
+                <li><a href="#">Fall</a></li>
+                <li><a href="#">Winter</a></li>
+                <li><a href="#">Spring</a></li>
+                <li><a href="#">Summer</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class = "menu-title">By the 5 Tastes</a>
+              <ul class="menu vertical nested is-active" style="color: black;">
+                <li><a href="#">Sweet</a></li>
+                <li><a href="#">Salty</a></li>
+                <li><a href="#">Sour</a></li>
+                <li><a href="#">Bitter</a></li>
+                <li><a href="#">Umami</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" class = "menu-title">Hot Drinks</a>
+            </li>
+            <li>
+              <a href="#" class = "menu-title">Frozen Drinks</a>
+            </li>
+          </ul>
+  
+
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+        <!-- Nav Bar -->
+        <div class="top-bar" data-hide-for="">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li><button class="menu-icon" type="button" data-toggle="sidebar"></button></li>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="savedRecipes.html">My Recipes</a></li>
+                    <li><a href="barsnearyou.html">Bars Near You</a></li>
+                  </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li><input type="search" placeholder="Search" id="searchValue"></li>
+                    <button type="button" class="button hollow" id="submitbtn">Search</button>
+                  </ul>
+            </div> 
+        </div>
+
+        <!--Content goes here-->
+        <div class="grid-container">
+            <h1 id="savedHeader">Bars Near You</h1>
+             <div class="grid-x grid-margin-x grid-margin-y medium-up-3 cardContainer">
+              <!--<div class="cell">
+                <div class="card">
+                    <img src="assets/images/Front Page/Cinnamon-Drink.jpg">
+                    <div class="card-divider">
+                        This is a divider
+                    </div>
+                    <div class="card-section">
+                        <h2>This is my content</h2> 
+                        <p>With some other cool stuff too.</p>
+                    </div>
+                </div>  
+              
+              </div>
+
+
+            </div>     -->
+              
+        </div>
+        
+
+    
+    </div>
+    <footer>
+          <blockquote class="text-center">
+          “I drink to make other people more interesting.” <cite>Ernest Hemingway</cite>
+        </blockquote>
+        </footer>
+        <script src="barsnearyou.js" type="text/javascript"></script>
+    <script src="https://kit.fontawesome.com/76e73fc237.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
