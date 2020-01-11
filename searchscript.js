@@ -226,7 +226,7 @@ function saltyDrinks (){
             console.log(response)
             
            if (response.drinks !=null){ 
-                saltyDrinkList.push(response.drinks[0].idDrink);
+                saltyDrinkList.push(response.drinks[0]);
             
            
             console.log(saltyDrinkList);
@@ -300,6 +300,70 @@ for (var i = 0; i < queryList.length; i++){
 }
 };
 
+function bitterDrinks (){
+    var queryList = ["Negroni",
+    "Americano",
+    "Bermuda Highball" ,
+    "English Highball" ,
+    "Boulevardier",
+
+    ];
+
+
+
+bitterDrinkList = [];
+for (var i = 0; i < queryList.length; i++){
+    var query = queryList[i];
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+query;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
+        
+       if (response.drinks !=null){ 
+            bitterDrinkList.push(response.drinks[0]);
+        
+       
+        console.log(bitterDrinkList);
+        localStorage.setItem("Bitter Drink List", JSON.stringify(bitterDrinkList));
+    }})
+}
+};
+
+function umamiDrinks (){
+    var queryList = ["Bloody Mary",
+    "Dirty Martini",
+    "Bobby Burns Cocktail" ,
+    
+
+    ];
+
+
+
+umamiDrinkList = [];
+for (var i = 0; i < queryList.length; i++){
+    var query = queryList[i];
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s="+query;
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response)
+        
+       if (response.drinks !=null){ 
+            umamiDrinkList.push(response.drinks[0]);
+        
+       
+        console.log(umamiDrinkList);
+        localStorage.setItem("Umami Drink List", JSON.stringify(umamiDrinkList));
+    }})
+}
+};
+
+
 
 
 function fallDrinksClick(){
@@ -307,7 +371,7 @@ function fallDrinksClick(){
     localStorage.setItem("title","Fall Drinks");
     localStorage.setItem("query","Fall Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
     }, 700);
     
 }
@@ -316,7 +380,7 @@ function winterDrinksClick(){
     localStorage.setItem("title","Winter Drinks");
     localStorage.setItem("query","Winter Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
     }, 700);
     
 }
@@ -325,7 +389,7 @@ function springDrinksClick(){
     localStorage.setItem("title","Spring Drinks");
     localStorage.setItem("query","Spring Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
     }, 700);
     
 }
@@ -334,7 +398,7 @@ function summerDrinksClick(){
     localStorage.setItem("title","Summer Drinks");
     localStorage.setItem("query","Summer Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
     }, 700);
     
 }
@@ -343,7 +407,7 @@ function hotDrinksClick(){
     localStorage.setItem("title","Hot Drinks");
     localStorage.setItem("query","Hot Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
     }, 700);
     
 }
@@ -352,7 +416,7 @@ function frozenDrinksClick(){
     localStorage.setItem("title","Frozen Drinks");
     localStorage.setItem("query","Frozen Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
     }, 700);
     
 }
@@ -361,7 +425,7 @@ function saltyDrinksClick(){
     localStorage.setItem("title","Salty Drinks");
     localStorage.setItem("query","Salty Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
     }, 700);
     
 }
@@ -370,7 +434,7 @@ function sweetDrinksClick(){
     localStorage.setItem("title","Sweet Drinks");
     localStorage.setItem("query","Sweet Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
     }, 700);
     
 }
@@ -381,7 +445,27 @@ function sourDrinksClick(){
     localStorage.setItem("title","Sour Drinks");
     localStorage.setItem("query","Sour Drink List");
     setTimeout(() => {
-        window.location.href = "search.html";
+            window.location.href = "search.html";
+    }, 700);
+    
+}
+
+function bitterDrinksClick(){
+    bitterDrinks();
+    localStorage.setItem("title","Bitter Drinks");
+    localStorage.setItem("query","Bitter Drink List");
+    setTimeout(() => {
+            window.location.href = "search.html";
+    }, 700);
+    
+}
+
+function umamiDrinksClick(){
+    umamiDrinks();
+    localStorage.setItem("title","Umami Drinks");
+    localStorage.setItem("query","Umami Drink List");
+    setTimeout(() => {
+            window.location.href = "search.html";
     }, 700);
     
 }

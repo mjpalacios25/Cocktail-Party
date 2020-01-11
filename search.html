@@ -50,8 +50,8 @@
           <li><a href="javascript:sweetDrinksClick()">Sweet</a></li>
           <li><a href="javascript:saltyDrinksClick()">Salty</a></li>
           <li><a href="javascript:sourDrinksClick()">Sour</a></li>
-          <li><a href="#">Bitter</a></li>
-          <li><a href="#">Umami</a></li>
+          <li><a href="javascript:bitterDrinksClick()">Bitter</a></li>
+          <li><a href="javascript:umamiDrinksClick()">Umami</a></li>
         </ul>
       </li>
       <li>
@@ -61,7 +61,7 @@
         <a href="javascript:frozenDrinksClick()" class="menu-title">Frozen Drinks</a>
       </li>
       <li>
-        <a href="#" class="menu-title">Luck of the Draw!</a>
+        <a href="javascript:luckClick()" class="menu-title">Luck of the Draw!</a>
       </li>
     </ul>
   </div>
@@ -126,7 +126,7 @@
           <div class="responsive" style="border:none;">
             <div class="gallery" style="border:none; ">
               <a href="javascript:linkClick(`+results[i].idDrink+`)" class="thumbnail">
-                <img data-src="` + results[i].strDrinkThumb + `" src="images/lazyload.gif" class="lazyload" style="width=100%; height:400px; object-fit:cover">
+                <img data-src="` + results[i].strDrinkThumb + `" src="lazyload.gif" class="lazyload" style="width=100%; height:400px; object-fit:cover">
               </a>
               <p class="desc">` + results[i].strDrink + `</p>
             </div>

@@ -36,7 +36,7 @@ var addID;
   });
 
 //----------------------------------------------------------------
-$('#random-button').on('click', function(e) {
+$('.random-button-click').on('click', function(e) {
    e.preventDefault();
    
 
@@ -90,3 +90,8 @@ $('#random-button').on('click', function(e) {
 
 
 });
+
+
+
+
+    

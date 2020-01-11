@@ -1,7 +1,7 @@
 $(document).foundation();
 
 var query;
-var recipes = ["11003", "11001", "11007"];
+var recipes = [];
 var cocktailURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?"; 
 var cockatailParam = {};
 var photoURL = "https://api.unsplash.com/search/photos?"; 
@@ -54,23 +54,25 @@ function getRecipe(){
 
 //build card function
 function buildCards(response) {
-    if(!recipes) {
-        $("#savedHeader").text("You dont have any saved receipes")
-    } else {
-        $("#savedHeader").text("My Recipes");
-        
-        var newCell = $("<div>").addClass("cell");
-        var newCard = $("<div>").addClass("card");
-        var newImg = $("<img>").attr("id", "drink" + drinkNum).addClass("drinkpic");
-        var newCardDivider = $("<div>").addClass("card-divider");
-        var newCardContent = $("<div>").addClass("card-section");
-        var newCardHeader = $("<h4>").text(response.drinks[0].strDrink);
+  
+    $("#savedHeader").text("My Recipes");
+    
+    var newCell = $("<div>").addClass("cell");
+    var newCard = $("<div>").addClass("card");
+    var anchorTag = $("<a>").attr("href", "../Cocktail-Party/Elijah-Docs/drinkinfo.html");
+    var newImg = $("<img>").attr("id", "drink" + drinkNum).addClass("drinkpic").attr("dataid", response.drinks[0].idDrink);
+    var newCardContent = $("<div>").addClass("card-section");
+    var newCardHeader = $("<h4>").text(response.drinks[0].strDrink);
 
-        $(".cardContainer").append(newCell);
-        newCell.append(newCard);
-        newCard.append(newImg, newCardDivider, newCardContent);
-        newCardContent.append(newCardHeader);    
-    }
+    $(".cardContainer").append(newCell);
+    newCell.append(newCard);
+    anchorTag.append(newImg);
+    newCard.append(anchorTag, newCardContent);
+    newCardContent.append(newCardHeader);    
+
+
+
+
 }
 
 //AJAX calls for recipes and photos... put into setInterval functions to syncronize API pulls
@@ -200,7 +202,6 @@ function searchResponse (searchValue){
 }
 
 $("#submitbtn").on("click", function(event) {
-    localStorage.clear();
     event.preventDefault();
     searchValue = $("#searchValue").val().trim();
     searchResponse(searchValue);
@@ -212,11 +213,36 @@ $("#submitbtn").on("click", function(event) {
     },700);
 });
 
+$("#searchValue").keypress(function(event) {
+    if (event.which == 13) {        
+        event.preventDefault();
+        searchValue = $("#searchValue").val().trim();
+        searchResponse(searchValue);
+        localStorage.setItem("query","results");
+        localStorage.setItem("title",searchValue);
+        
+        setTimeout(() => {
+            window.location.href = "search.html";
+        },700);
+    }
+});
+
 function linkClick(id) {
-    localStorage.clear();
     localStorage.setItem("results",id);
     window.location.href = "Elijah-Docs/drinkinfo.html";
+}
 
-
+function luckClick() {
+    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function (response) {
+        console.log(response)
+        localStorage.setItem("results",response.drinks[0].idDrink);
+    })
+    setTimeout(() => {
+            window.location.href = "Elijah-Docs/drinkinfo.html"; 
+    }, 700);
 }
 

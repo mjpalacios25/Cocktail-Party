@@ -28,30 +28,30 @@
             <li>
               <a href="#" class = "menu-title">Seasonal</a>
               <ul class="menu vertical nested is-active" style="color: black;">
-                <li><a href="#">Fall</a></li>
-                <li><a href="#">Winter</a></li>
-                <li><a href="#">Spring</a></li>
-                <li><a href="#">Summer</a></li>
+                <li><a href="javascript:fallDrinksClick()">Fall</a></li>
+                <li><a href="javascript:winterDrinksClick()">Winter</a></li>
+                <li><a href="javascript:springDrinksClick()">Spring</a></li>
+                <li><a href="javascript:summerDrinksClick()">Summer</a></li>
               </ul>
             </li>
             <li>
               <a href="#" class = "menu-title">By the 5 Tastes</a>
               <ul class="menu vertical nested is-active" style="color: black;">
-                <li><a href="#">Sweet</a></li>
-                <li><a href="#">Salty</a></li>
-                <li><a href="#">Sour</a></li>
-                <li><a href="#">Bitter</a></li>
-                <li><a href="#">Umami</a></li>
+                <li><a href="javascript:sweetDrinksClick()">Sweet</a></li>
+                <li><a href="javascript:saltyDrinksClick()">Salty</a></li>
+                <li><a href="javascript:sourDrinksClick()">Sour</a></li>
+                <li><a href="javascript:bitterDrinksClick()">Bitter</a></li>
+                <li><a href="javascript:umamiDrinksClick()">Umami</a></li>
               </ul>
             </li>
             <li>
-              <a href="#" class = "menu-title">Hot Drinks</a>
+              <a href="javascript:hotDrinksClick()" class = "menu-title">Hot Drinks</a>
             </li>
             <li>
-              <a href="#" class = "menu-title">Frozen Drinks</a>
+              <a href="javascript:frozenDrinksClick()" class = "menu-title">Frozen Drinks</a>
             </li>
             <li>
-              <a href="#" class = "menu-title">Luck of the Draw!</a>
+              <a href="javascript:luckClick()" class = "menu-title">Luck of the Draw!</a>
             </li>
           </ul>
   
@@ -78,7 +78,8 @@
         </div>
 
         <!--Content goes here-->
-        <div class="grid-container">
+        <div class="content">
+          <div class="grid-container content-wrap">
             <h1 id="savedHeader"></h1>
              <div class="grid-x grid-margin-x grid-margin-y medium-up-3 cardContainer">
               <!--<div class="cell">
@@ -99,10 +100,9 @@
             </div>     -->
               
         </div>
-        
-
-    
     </div>
+        </div>
+
     <footer>
           <blockquote class="text-center">
           “I drink to make other people more interesting.” <cite>Ernest Hemingway</cite>
@@ -113,6 +113,12 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <!-- Compressed JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
-    <script src="CocktailScript.js"></script>
+    <script src="cocktailscriptsearch.js"></script>
+    <script src="searchscript.js"></script>
+    
+
+   
+
+   
   </body>
 </html>
