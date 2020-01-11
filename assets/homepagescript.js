@@ -289,7 +289,7 @@ function umamiDrinks (){
 
     umamiDrinkList = [];
     
-    var queryList = ["egg", "egg white", "tomato juice", "olive"];
+    var queryList = ["egg", "egg white", "tomato juice"];
        
     for (var i = 0; i < queryList.length; i++){
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
@@ -335,19 +335,7 @@ function sweetDrinks (){
     
 }};
 
-function random() {
-    queryURL = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function (response) {
-            console.log(response)
-            if (response.drinks !=null){
-                localStorage.setItem("random Drink List", JSON.stringify(response.drinks.idDrink));
-            };
-        })
-}
 
 fallDrinks();
 winterDrinks();
@@ -360,7 +348,7 @@ sourDrinks();
 bitterDrinks();
 umamiDrinks();
 sweetDrinks();
-random();
+
 
 
 
@@ -444,7 +432,7 @@ function searchFilter () {
     console.log(finalFilter);
 
     localStorage.setItem("results", JSON.stringify(finalFilter));
-}, 2000)};
+}, 200)};
 
 $("#sidebarMenu").on("click", ".quickFilter", function(event) {
     event.preventDefault();
@@ -459,7 +447,7 @@ $("#sidebarMenu").on("click", ".quickFilter", function(event) {
     localStorage.setItem("results", JSON.stringify(finalFilter));
 
     
-    location.href = "#";
+    location.href = "./assets/test.html";
 
 });
 
@@ -477,7 +465,8 @@ $("#submitbtn").on("click", function(event) {
     searchResponse(searchValue);
 
     searchFilter();
-
-    location.href = "#";
+setTimeout( function(){
+    location.href = "./assets/test.html";
+}, 300);
 });
 
