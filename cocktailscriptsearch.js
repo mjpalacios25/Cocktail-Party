@@ -169,6 +169,7 @@ function getDrinks(){
     
     if(typeof recipes == "undefined"){
         recipes = JSON.parse(localStorage.getItem("savedRecipes"));
+        recipes = [...new Set(recipes)]
         console.log(recipes);
     }
         var recipeLength = recipes.length - recipes.length;
