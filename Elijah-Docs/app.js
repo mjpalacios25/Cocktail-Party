@@ -1,10 +1,10 @@
+$(document).foundation();
 $(document).ready(function() {
-$(document).foundation() 
-
-var valueKey = JSON.parse(localStorage.getItem("results"));
-var queryURL2 = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + valueKey
-var bevArr = [];
-var addID;
+  
+  var valueKey = JSON.parse(localStorage.getItem("results"));
+  var queryURL2 = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + valueKey
+  var bevArr = [];
+  var addID;
 
     $.ajax({
         url: queryURL2,
@@ -36,7 +36,7 @@ var addID;
   });
 
 //----------------------------------------------------------------
-$('#random-button').on('click', function(e) {
+$('.random-button-click').on('click', function(e) {
    e.preventDefault();
    
 
@@ -70,23 +70,30 @@ $('#random-button').on('click', function(e) {
             }
             
           });
-
           addID = response.drinks[0].idDrink;
-
-        
-
   });
 });
 
 //RECIPE SAVE
         $('.recipe-add').on('click', function(e) {
-        e.preventDefault();   
-            var drinkId = addID;          
+        e.preventDefault();
+
+            var drinkId = addID; 
+            if(typeof drinkId == "undefined"){
+              var drinkId = localStorage.getItem("results");
+            }
+            bevArr = JSON.parse(localStorage.getItem("savedRecipes"));
             bevArr.push(drinkId);
-            localStorage.setItem("savedRecipes", JSON.stringify(bevArr)) 
-            console.log(bevArr)
-         
+            console.log("bevArr "+bevArr);
+            localStorage.setItem("savedRecipes", JSON.stringify(bevArr));
+            console.log(localStorage.getItem("savedRecipes"));
+            window.location = "savedRecipes.html";
         });
 
-
 });
+
+function appendLocalStorage(name, data) {
+    var oldData = localStorage.getItem(name);
+    oldData.push(data);
+
+}

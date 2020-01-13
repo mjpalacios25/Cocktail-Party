@@ -5,8 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cocktail Info</title>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="../Elijah-Docs/app.css">
+    <base href="../">
+    <link rel="stylesheet" href="Elijah-Docs/css/foundation.css">
+    <link rel="stylesheet" href="Elijah-Docs/app.css">
     <link href="https://fonts.googleapis.com/css?family=Caveat|Special+Elite&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -25,30 +26,27 @@
             <li>
               <a href="#" class = "menu-title">Seasonal</a>
               <ul class="menu vertical nested is-active" style="color: black;">
-                <li><a href="#">Fall</a></li>
-                <li><a href="#">Winter</a></li>
-                <li><a href="#">Spring</a></li>
-                <li><a href="#">Summer</a></li>
+                <li><a href="javascript:fallDrinksClick()">Fall</a></li>
+                <li><a href="javascript:winterDrinksClick()">Winter</a></li>
+                <li><a href="javascript:springDrinksClick()">Spring</a></li>
+                <li><a href="javascript:summerDrinksClick()">Summer</a></li>
               </ul>
             </li>
             <li>
               <a href="#" class = "menu-title">By the 5 Tastes</a>
               <ul class="menu vertical nested is-active" style="color: black;">
-                <li><a href="#">Sweet</a></li>
-                <li><a href="#">Salty</a></li>
-                <li><a href="#">Sour</a></li>
-                <li><a href="#">Bitter</a></li>
-                <li><a href="#">Umami</a></li>
+                <li><a href="javascript:sweetDrinksClick()">Sweet</a></li>
+                <li><a href="javascript:saltyDrinksClick()">Salty</a></li>
+                <li><a href="javascript:sourDrinksClick()">Sour</a></li>
+                <li><a href="javascript:bitterDrinksClick()">Bitter</a></li>
+                <li><a href="javascript:umamiDrinksClick()">Umami</a></li>
               </ul>
             </li>
             <li>
-              <a href="#" class = "menu-title">Hot Drinks</a>
+              <a href="javascript:hotDrinksClick()" class = "menu-title">Hot Drinks</a>
             </li>
             <li>
-              <a href="#" class = "menu-title">Frozen Drinks</a>
-            </li>
-            <li>
-              <a href="#" class = "menu-title">Luck of the Draw!</a>
+              <a href="javascript:frozenDrinksClick()" class = "menu-title">Frozen Drinks</a>
             </li>
           </ul>
   
@@ -61,15 +59,15 @@
             <div class="top-bar-left">
                 <ul class="dropdown menu" data-dropdown-menu>
                     <li><button class="menu-icon" type="button" data-toggle="sidebar"></button></li>
-                    <li><a href="../homepage.html">Home</a></li>
-                    <li><a href="../savedRecipes.html">My Recipes</a></li>
-                    <li><a href="#">Store</a></li>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="savedRecipes.html">My Recipes</a></li>
+                    <li><a href="barsnearyou.html">Bars Near You</a></li>
                   </ul>
             </div>
             <div class="top-bar-right">
                 <ul class="menu">
-                    <li><input type="search" placeholder="Search" id="drinkSearch"></li>
-                    <button type="button" class="button hollow">Search</button>
+                    <li><input type="search" placeholder="Search" id="searchValue"></li>
+                    <button type="button" class="button hollow" id="submitbtn" value="search">Search</button>
                   </ul>
             </div> 
         </div>
@@ -109,7 +107,7 @@
               <div class="grid-container text-center">
               <div class="grid-x grid-margin-x">
                   <div class="cell medium-12">
-                  <h2 class="text-center button hollow" id="random-button">Random Cocktail</h2>
+                  <h2 class="text-center button hollow random-button-click" id="random-button">Random Cocktail</h2>
                     
                 </div>
               </div>
@@ -125,9 +123,12 @@
 
             
     <script src="https://kit.fontawesome.com/76e73fc237.js" crossorigin="anonymous"></script>
-    <script src="../Elijah-Docs/js/jquery.js"></script>
-    <script src="../Elijah-Docs/js/what-input.js"></script>
-    <script src="../Elijah-Docs/js/foundation.js"></script>
-    <script src="../Elijah-Docs/app.js"></script>
+    <script src="Elijah-Docs/js/jquery.js"></script>
+    <script src="Elijah-Docs/js/what-input.js"></script>
+    <script src="Elijah-Docs/js/foundation.js"></script>
+    <script src="Elijah-Docs/app.js"></script>
+    <script src="searchscript.js"></script>
+    <script src="cocktailscriptsearch.js"></script>
+    
   </body>
 </html>
