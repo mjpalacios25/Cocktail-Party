@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocktail Party Home</title>
+    <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/motion-ui@1.2.3/dist/motion-ui.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/kzi8iih.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat|Special+Elite&display=swap" rel="stylesheet">
+
+
+    <style>
+    body {
+  font-family: 'Special Elite', cursive;
+  background: url("./parchmentbg.jpg");
+  background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
+  -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+  margin: 0; /* to remove the default white margin of body */
+  padding: 0; /* to remove the default white margin of body */
+  overflow: hidden;
+  z-index: 20;
+ }
+    
+    </style>
+  </head>
+  
+  <body>
+    <div class="medium-2 columns hide-for-small-only" id = "sidebar">
+      <div id = "sidebar-content">
+      <img src="http://www.cocktailsandbars.com/wp-content/uploads/2018/11/bancho-bar-cocktailsandbars-0G6A3193.jpg" alt="company logo">
+      
+      
+      <ul id = "sidebarMenu" class="vertical menu accordion-menu" style = "font-weight: bold; color: black;" data-accordion-menu>
+        <li>
+          <a href="savedRecipes.html" class = "menu-title">Your Drinks!</a>
+        </li>
+        
+        <li>
+          <a href="barsnearyou.html" class = "menu-title">Bars Near You!</a>
+        </li>
+      
+          <a href="#" class = "menu-title">Seasonal</a>
+          <ul class="menu vertical nested is-active" style="color: black;">
+            <li><a href="javascript:fallDrinksClick()">Fall</a></li>
+          <li><a href="javascript:winterDrinksClick()">Winter</a></li>
+          <li><a href="javascript:springDrinksClick()">Spring</a></li>
+          <li><a href="javascript:summerDrinksClick()">Summer</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class = "menu-title">By the 5 Tastes</a>
+          <ul class="menu vertical nested is-active" style="color: black;">
+            <li><a href="javascript:sweetDrinksClick()">Sweet</a></li>
+            <li><a href="javascript:saltyDrinksClick()">Salty</a></li>
+            <li><a href="javascript:sourDrinksClick()">Sour</a></li>
+            <li><a href="javascript:bitterDrinksClick()">Bitter</a></li>
+            <li><a href="javascript:umamiDrinksClick()">Umami</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="javascript:hotDrinksClick()" class="menu-title">Hot Drinks</a>
+        </li>
+        <li>
+          <a href="javascript:frozenDrinksClick()" class="menu-title">Frozen Drinks</a>
+        </li>
+      </ul>
+      </div>     
+    </div>
+    
+    <div class="medium-10 columns" id="maincontent">
+      <div class = "text-center title-bar" style = "margin-bottom: -8px;">
+        <h1 style="font-family: modesto-open-primary;">Cocktail Party!</h1>
+      </div>
+      
+  
+  
+  <!-- / logo and ad break -->
+
+ <br>
+
+ <div class="input-group">
+    <input class = "input-group-field" type="search" placeholder="Search" id="searchValue">
+    <div class = "input-group-button">
+      <input type = "submit" class="button mr" value = "Search" id="submitbtn" style="background-color: peru;">
+    </div>
+</div>
+  
+<div class="orbit" style = "margin-top: -12px" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <div class="orbit-wrapper">
+    <div class="orbit-controls">
+      <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+      <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+    </div>
+    <ul class="orbit-container">
+      <li class="is-active orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="https://www.martinellis.com/wp-content/uploads/2017/01/Drink-Martinellis-Sangria.jpg" alt="Sangria">
+          <figcaption class="orbit-caption"><p>The <a href="javascript:linkClick(13026)" style="text-decoration: underline;" id = "13026" class = "orbitDrink">Sangria</a> is a great mixture of red wine and fruit, with the fruit accentuating the natural sweetness one finds in red wine.</p></figcaption>
+        </figure>
+      </li>
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="https://www.patrontequila.com/binaries/content/gallery/patrontequila/recipes/patron-extra-anejo/oldest-fashion/patron_lifestyle_oldestfashion.jpg" alt="old-fashion">
+          <figcaption class="orbit-caption"><p>One of the original cocktails, the <a href="javascript:linkClick(11001)" style="text-decoration: underline;" id = "11001" class = "orbitDrink">Old Fashioned</a> is a must for anyone of class.</p></figcaption>
+        </figure>
+      </li>
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="https://d256619kyxncpv.cloudfront.net/gui/img/2019/02/04/10/2019020410_15492751294974_c.jpg" alt="White Russian">
+          <figcaption class="orbit-caption"><p>Russia is a land of hard winters and excessive alcohol, and the <a href="javascript:linkClick(12528)" style="text-decoration: underline;" id = "12528" class = "orbitDrink">White Russian</a> does a great job in representing that. 
+          </p></figcaption>
+        </figure>
+      </li>
+      <li class="orbit-slide">
+        <figure class="orbit-figure">
+          <img class="orbit-image" src="https://aspiringwinos.com/wp-content/uploads/How-to-Host-A-Mimosa-Brunch-long.jpg" alt="Mimosa">
+          <figcaption class="orbit-caption"><p>A staple of brunches everywhere, the <a href="javascript:linkClick(17205)" style="text-decoration: underline;" id = "17205" class = "orbitDrink">Mimosa</a> is a well known drink that does an amazing job in hiding its alcohol content behind its fruity sweetness.
+          </p></figcaption>
+        </figure>
+      </li>
+    </ul>
+  </div>
+  
+</div>
+  </div>
+  
+
+  
+
+
+    
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="searchscript.js" type="text/javascript"></script>
+    <script src="cocktailscriptsearch.js" type="text/javascript"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
