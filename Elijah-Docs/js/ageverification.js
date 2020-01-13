@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+var ageGet = localStorage.getItem("ageverified");
+if (ageGet === true || ageGet === null) {
+    window.location.replace("../homepage.html")
+};
+
 $('#submit-age').on('click', function(e){  
 e.preventDefault();
 console.log("hello")
@@ -17,9 +22,12 @@ alert(years);
 
 if (years >= 21) {
 localStorage.setItem("age-verified", true)
+    window.location.replace("../homepage.html")
 } else {
     alert("Come back in " + (21 - years) + " year(s)")
+    window.location.replace("https://www.chuckecheese.com/");
 }
 });
 });
+
 
