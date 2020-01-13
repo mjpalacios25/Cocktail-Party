@@ -49,6 +49,7 @@ function getRecipe(){
 
     if(storedRecipes){
         recipes = storedRecipes;
+        
         console.log(recipes)
     } 
 }

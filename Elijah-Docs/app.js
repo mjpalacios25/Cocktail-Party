@@ -77,11 +77,15 @@ $('.random-button-click').on('click', function(e) {
 //RECIPE SAVE
         $('.recipe-add').on('click', function(e) {
         e.preventDefault();
-        localStorage.setItem("savedRecipes", JSON.stringify(bevArr));
+        
+        console.log(JSON.parse(localStorage.getItem("savedRecipes")))
+        console.log(addID)
             var drinkId = addID; 
             if(typeof drinkId == "undefined"){
               var drinkId = localStorage.getItem("results");
+              
             }
+            
             bevArr = JSON.parse(localStorage.getItem("savedRecipes"));
             console.log(bevArr)
             console.log(drinkId)
@@ -90,7 +94,7 @@ $('.random-button-click').on('click', function(e) {
             console.log("bevArr "+bevArr);
             localStorage.setItem("savedRecipes", JSON.stringify(bevArr));
             console.log(localStorage.getItem("savedRecipes"));
-            window.location = "savedRecipes.html";
+            //window.location = "savedRecipes.html";
         });
 
 });
