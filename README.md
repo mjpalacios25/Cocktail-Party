@@ -2,7 +2,7 @@
 ​
 #### Cocktail-Party-Repo, 01/04/2020
 ​
-#### By Moses Palacios / Andres Glasener / Lisa Walter / Elijah Broaddus / Dalton Campos
+#### By Moses Palacios / Andres Glasener / Lisa Walter / Elijah Broaddus 
 ​
 ## Description
 
