@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 var ageGet = localStorage.getItem("ageverified");
-if (ageGet === true || ageGet === null) {
+if (ageGet === true) {
     window.location.replace("../homepage.html")
 };
 
