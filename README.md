@@ -14,6 +14,7 @@ Cocktail Party is a web application utilizing both CocktailDB and Unsplash APIs 
 * Users can save cocktail recipes using local storage.
 * Users can browse cocktails based upon season/flavor profile.
 * Users can search cocktails by name or ingredient. 
+* Users can find nearby cocktail bars.
  
 
 ## Setup/Installation Requirements
