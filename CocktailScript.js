@@ -14,7 +14,7 @@ var searchValue = "";
 var results = [];
 
 $(document).ready(function(){
-    //build URL functions
+//build URL functions
 
 function buildCocktailUrl(cocktails) {
     cockatailParam.i = cocktails;
@@ -229,5 +229,5 @@ $("#submitbtn").on("click", function(event) {
     searchResponse(searchValue);
 });
 
-})
+ })
 

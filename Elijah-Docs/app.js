@@ -77,7 +77,7 @@ $('.random-button-click').on('click', function(e) {
 //RECIPE SAVE
         $('.recipe-add').on('click', function(e) {
         e.preventDefault();
-        localStorage.setItem("savedRecipes", JSON.stringify(bevArr));
+        //localStorage.setItem("savedRecipes", JSON.stringify(bevArr));
         console.log(JSON.parse(localStorage.getItem("savedRecipes")))
         console.log(addID)
             var drinkId = addID; 
