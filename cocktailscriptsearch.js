@@ -227,7 +227,7 @@ function getPhotos(){
 }    
 getDrinks();
 console.log(photoRecipeName);
- //setTimeout(getPhotos, 100);
+//setTimeout(getPhotos, 100);
 
 
 
