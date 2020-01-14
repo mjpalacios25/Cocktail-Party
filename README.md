@@ -2,7 +2,7 @@
 ​
 #### Cocktail-Party-Repo, 01/04/2020
 ​
-#### By Moses Palacios / Andres Glasener / Lisa Walter / Elijah Broaddus / Dalton Campos
+#### By Moses Palacios / Andres Glasener / Lisa Walter / Elijah Broaddus 
 ​
 ## Description
 
@@ -42,6 +42,6 @@ No known bugs at this time.
 
 ### License
 ​
-Copyright(c) 2020 By Moses Palacios / Andres Glasener / Lisa Walter / Elijah Broaddus / Dalton Campos
+Copyright(c) 2020 By Moses Palacios / Andres Glasener / Lisa Walter / Elijah Broaddus
 
 <img width="1433" alt="image" src="https://user-images.githubusercontent.com/52770466/71769668-d42df880-2ef1-11ea-9ee3-d8ddcbadc258.png">
