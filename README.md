@@ -20,7 +20,7 @@ Cocktail Party is a web application utilizing both CocktailDB and Unsplash APIs 
 
 ## Setup/Installation Requirements
 ​
-No set-up or installation required.
+* Navigate to the provided heroku app link: https://mjpalacios25.github.io/Cocktail-Party/
 ​
 ## Known Bugs
 ​
